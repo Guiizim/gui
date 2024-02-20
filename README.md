@@ -50,13 +50,23 @@
         opacity: 0;
       }
     }
+    .no-btn {
+      animation: shake 0.5s infinite;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(5px); }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Quer casar comigo?</h1>
     <a href="#" onclick="showHearts()" class="btn">Sim</a>
-    <a href="#" onclick="alert('Que pena! Mas obrigado por considerar.')" class="btn">Não</a>
+    <a href="#" onclick="alert('Que pena! Mas obrigado por considerar.')" onmouseover="this.classList.add('no-btn')" onmouseout="this.classList.remove('no-btn')" class="btn">Não</a>
   </div>
   <div class="hearts"></div>
 
